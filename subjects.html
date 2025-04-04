@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Faculty</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px 20px;
+        }
+
+        .about-section {
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .faculty-section {
+            background-color: #e6f7ff;
+        }
+
+        .faculty-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .faculty-member {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .faculty-member img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .contact-section {
+            background-color: #f9f9f9;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, textarea, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #004080;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003060;
+        }
+
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to Our Subjects Page</h1>
+            
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Our Courses</h2>
+            <p>Our faculty is committed to providing a nurturing and enriching environment for students to grow and excel. We provide best education for classes 8,9,10</p>
+        </div>
+    </section>
+
+    <section id="faculty" class="faculty-section">
+        <div class="container">
+            <h2>Here Are The Subjects We Teach
+            </h2>
+            <div class="faculty-list">
+                <div class="faculty-member">
+                    
+                    <h3>PHYSICS,CHEMISTRY,MATHS</h3>
+                    <p>For 8,9,10</p>
+                </div>
+                <div class="faculty-member">
+                    
+                    <h3>HISTORY,GEOGRAPHY,CIVICS</h3>
+                    <p>For 8,9,10</p>
+                </div>
+                <div class="faculty-member">
+                   
+                    <h3>SPOKEN ENGLISH</h3>
+                    <p>Only On Sundays</p>
+                </div>
+                <!-- Add more faculty members as needed -->
+            </div>
+        </div>
+    </section>
+
+   
+    <button onclick="window.location.href='index.html';" class = "navbar">BACK</button>
+</body>
+</html>

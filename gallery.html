@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Gallery</title>
+  
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Header Section */
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Footer Section */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    .button {
+            background-color: #004080;
+            color: white;
+            font-weight: bold;
+            border: #003f7f ;
+            border-radius: 10%;
+            cursor: pointer;
+            margin: auto;
+            width: 5%;
+            height: 70%;
+            padding: 8px;
+        }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Gallery</h1>
+  </header>
+  <section class="gallery">
+    <div class="gallery-item"><img src="image1.jpeg" alt="School Event 1"></div>
+    <div class="gallery-item"><img src="image2.jpeg" alt="School Event 2"></div>
+    <div class="gallery-item"><img src="image3.jpeg" alt="School Event 3"></div>
+    <div class="gallery-item"><img src="image5.jpeg" alt="School Event 5"></div>
+    <div class="gallery-item"><img src="image6.jpeg" alt="School Event 6"></div>
+  </section>
+  <button onclick="window.location.href='index.html';" class = "button">BACK</button>
+</body>
+</html>
