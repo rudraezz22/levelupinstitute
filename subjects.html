@@ -1,171 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Faculty</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subjects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e6f7ff;
+    }
 
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 20px 0;
-        }
+    .menu-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 250px;
+      background-color: rgba(0, 64, 128, 0.95);
+      padding-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
 
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
+    .menu-bar a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      width: 100%;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
 
-        header h1 {
-            margin: 0;
-        }
+    .menu-bar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
+    .content {
+      margin-left: 270px;
+      padding: 20px;
+    }
 
-        nav ul li {
-            margin: 0 10px;
-        }
+    header {
+      text-align: center;
+      background-color: #004080;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      animation: fadeIn 1s ease-in-out;
+    }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .subject-section {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
 
-        section {
-            padding: 40px 20px;
-        }
+    .subject-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
 
-        .about-section {
-            background-color: #f9f9f9;
-            text-align: center;
-        }
+    .subject-card:hover {
+      transform: translateY(-5px);
+    }
 
-        .faculty-section {
-            background-color: #e6f7ff;
-        }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        .faculty-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
+    @media screen and (max-width: 768px) {
+      .menu-bar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 200px;
+        transform: translateX(0);
+        transition: left 0.3s ease-in-out;
+      }
 
-        .faculty-member {
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+      .menu-bar.active {
+        left: 0;
+      }
 
-        .faculty-member img {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
+      .menu-toggle {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background-color: #004080;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 20px;
+        z-index: 1100;
+        cursor: pointer;
+        border-radius: 5px;
+      }
 
-        .contact-section {
-            background-color: #f9f9f9;
-        }
-
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input, textarea, button {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #004080;
-            color: white;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #003060;
-        }
-
-        footer {
-            background-color: #004080;
-            color: white;
-            text-align: center;
-            padding: 10px 20px;
-        }
-    </style>
+      .content {
+        margin-left: 0;
+        padding-top: 80px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <div class="menu-bar" id="sidebar">
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="subjects.html">Subjects</a>
+    <a href="perks.html">Special Perks</a>
+  </div>
+
+  <div class="content">
     <header>
-        <div class="container">
-            <h1>Welcome to Our Subjects Page</h1>
-            
-        </div>
+      <h1>Subjects We Teach</h1>
+      <p>Meet our expert faculty and diverse subjects</p>
     </header>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>About Our Courses</h2>
-            <p>Our faculty is committed to providing a nurturing and enriching environment for students to grow and excel. We provide best education for classes 8,9,10</p>
-        </div>
-    </section>
+    <div class="subject-section">
+      <div class="subject-card">
+        <h3>Physics, Chemistry, Maths, Civics, Geography</h3>
+        <p>Taught by Vishal Sir</p>
+      </div>
 
-    <section id="faculty" class="faculty-section">
-        <div class="container">
-            <h2>Here Are The Subjects We Teach
-            </h2>
-            <div class="faculty-list">
-                <div class="faculty-member">
-                    
-                    <h3>PHYSICS,CHEMISTRY,MATHS</h3>
-                    <p>For 8,9,10</p>
-                </div>
-                <div class="faculty-member">
-                    
-                    <h3>HISTORY,GEOGRAPHY,CIVICS</h3>
-                    <p>For 8,9,10</p>
-                </div>
-                <div class="faculty-member">
-                   
-                    <h3>SPOKEN ENGLISH</h3>
-                    <p>Only On Sundays</p>
-                </div>
-                <!-- Add more faculty members as needed -->
-            </div>
-        </div>
-    </section>
+      <div class="subject-card">
+        <h3>Lower Classes</h3>
+        <p>Taught by Shrishti Ma'am</p>
+      </div>
 
-   
-    <button onclick="window.location.href='index.html';" class = "navbar">BACK</button>
+      <div class="subject-card">
+        <h3>Spoken English</h3>
+        <p>Available on some days</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
